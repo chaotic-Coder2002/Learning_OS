@@ -1,6 +1,6 @@
 # Using `strace`
 
-After writing and compiling <a href="">copy.c</a>, I ran the `strace` command as follows:
+After writing and compiling <a href="https://github.com/chaotic-Coder2002/Learning_OS/blob/OS/ch2/ProgrammingExercises/1/copy.c">copy.c</a>, I ran the `strace` command as follows:
 
 ```bash
 $ gcc -g copy.c -o run
