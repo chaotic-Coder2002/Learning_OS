@@ -109,30 +109,30 @@ The images below show the progress of the connection between the two nodes i.e. 
 
 So basically any new node is inserted between the head node and the last node.
 
-For example, just to simplify, let's say we have two nodes: `<-3->` and `<-5->`, the arrows represent `next`(`<-`) and `prev`(`->`) respectively.
+For example, just to simplify, let's say we have two nodes: `<-Head->` and `<-5->`, the arrows represent `next`(`<-`) and `prev`(`->`) respectively.
 
-Right now, `<-3` is `5` and `5->` is `3`. Basically the linked list looks like this: `...<-3-><-5->...` the `...` represent that it's a circular list and `3` and `5` point to each other
+Right now, `<-Head` is `5` and `5->` is `Head`. Basically the linked list looks like this: `...<-Head-><-5->...` the `...` represent that it's a circular list and `Head` and `5` point to each other
 
 Now, if I want to add a number `4` into this list, then it will inserted as:
 ```
-3-> = 4
-<-4 = 3
-4-> = 5 (because 5 is 3->) and
+Head-> = 4
+<-4 = Head
+4-> = 5 (because 5 is Head->) and
 <-5 = 4
 ```
 
-So our circular linked list is: `...<-3-><-4-><-5->...`.
+So our circular linked list is: `...<-Head-><-4-><-5->...`.
 
 Again, let's say I want to add a node `10`, so it will inserted as:
 
 ```
-3-> = 10
-<-10 = 3
-10-> = 4 (which is basically 3->) and
+Head-> = 10
+<-10 = Head
+10-> = 4 (which is basically Head->) and
 <-4 = 10
 ```
 
-So our circular linked list is: `...<-3-><-10-><-4-><-5->...`.
+So our circular linked list is: `...<-Head-><-10-><-4-><-5->...`.
 
 ## Traversing the linked list
 
@@ -157,6 +157,40 @@ for (pos = list_first_entry(head, typeof(*pos), member);\
 ```
 
 The macro `list_first_entry()` is defined <a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L604">here</a>. It's second argument is the <a href="https://www.oracle.com/solaris/technologies/c-type.html"><code>typeof()</code></a> operator. Basically
-the type of `*pos` is sent as a parameter which is `struct birthday`.
+the type of `*pos` is sent as a second parameter which is `struct birthday`.
+
+Now, the `list_first_entry()` macro calls another macro <a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L595"><code>list_entry()</code></a>:
+
+```C
+list_entry((ptr)->next, type, member) // ptr is actually the head.
+```
+
+This macro uses a macro called `container_of()` to cast a member of a structure out to the containing structure.
+
+In simple terms, consider the previously assumed circular linked list: `...<-Head-><-10-><-4-><-5->...`.
+
+If we are to print it, then it will be printed as follows:
+
+```
+5
+4
+10
+```
+
+Because, we do a `<-Head` (move to the node next to `Head` which will take us to the last node i.e. `5`).
+
+
+# Resources
+
+Resources in order:
+
+<ol>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L764">https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L764</a>.</li>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L604">https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L604</a>.</li>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L595">https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L595</a>.</li>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/tools/include/linux/container_of.h#L7">https://elixir.bootlin.com/linux/v6.17.5/source/tools/include/linux/container_of.h#L7</a>.</li>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/drivers/gpu/drm/radeon/mkregtable.c#L20">https://elixir.bootlin.com/linux/v6.17.5/source/drivers/gpu/drm/radeon/mkregtable.c#L20</a>.</li>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L639">https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L639</a>.</li>
+</ol>
 
 ---
