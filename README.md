@@ -3,6 +3,12 @@
 
 Learning some OS concepts from `Operating System Concepts by Abraham Silberschatz, Peter B Galvin and Greg Gagne`.
 
+# Very important
+
+<ol>
+<li><a href="https://elixir.bootlin.com/linux/v6.17.5/source">https://elixir.bootlin.com/linux/v6.17.5/source</a>.</li>
+</ol>
+
 # Important links
 
 <ol>
