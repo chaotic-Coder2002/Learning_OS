@@ -191,6 +191,7 @@ Resources in order:
 <li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/tools/include/linux/container_of.h#L7">https://elixir.bootlin.com/linux/v6.17.5/source/tools/include/linux/container_of.h#L7</a>.</li>
 <li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/drivers/gpu/drm/radeon/mkregtable.c#L20">https://elixir.bootlin.com/linux/v6.17.5/source/drivers/gpu/drm/radeon/mkregtable.c#L20</a>.</li>
 <li><a href="https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L639">https://elixir.bootlin.com/linux/v6.17.5/source/include/linux/list.h#L639</a>.</li>
+<li><a href="https://stackoverflow.com/a/65236136">https://stackoverflow.com/a/65236136</a>.</li>
 </ol>
 
 ---
