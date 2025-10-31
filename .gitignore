@@ -1,2 +1,9 @@
 *~
 dconfig
+*.sty
+*.tex
+*.png
+*.svg
+*.js
+*.html
+!index.html
