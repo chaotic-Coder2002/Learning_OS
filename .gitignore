@@ -7,3 +7,6 @@ dconfig
 *.js
 *.html
 !index.html
+*.css
+*.dot
+search/
