@@ -6,7 +6,7 @@
   Variable shadowing occurs when a variable declared in an inner scope takes precedence over a variable
   with the same name declared in an outer scope.
 
-  Look at line 14. If we expand the call to the macro at that line, then this is what we get:
+  Look at line 27. If we expand the call to the macro at that line, then this is what we get:
 
   \code{.c}
   int c = ({
