@@ -16,8 +16,8 @@ Learning some OS concepts from `Operating System Concepts by Abraham Silberschat
 <ul>
 <li><a href="https://www.oracle.com/solaris/technologies/c-type.html">Oracle</a>.</li>
 <li><a href="https://gcc.gnu.org/onlinedocs/gcc/Typeof.html">GNU</a>.</li>
-<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html">Statement expressions</a>.</li>
 </ul>
+<li><a href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html">Statement expressions</a>.</li>
 </ol>
 
 # Documentations
