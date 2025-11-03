@@ -22,6 +22,6 @@ Learning some OS concepts from `Operating System Concepts by Abraham Silberschat
 
 # Documentations
 
-I documented what little I understood <a href="https://chaotic-coder2002.github.io/Learning_OS_Docs/">here</a>.
+I have tried to document what little I have understood <a href="https://chaotic-coder2002.github.io/Learning_OS_Docs/">here</a>.
 
 ---
