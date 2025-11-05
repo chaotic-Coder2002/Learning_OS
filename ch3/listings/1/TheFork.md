@@ -35,6 +35,12 @@ The same has been picturized in the following image:
 <img src="images/forkSystemCall.jpg" width="80%" height="80%">
 
 
+# Some helpful links
+
+* <a href="https://www.ibm.com/docs/en/zos-basic-skills?topic=storage-what-is-address-space">https://www.ibm.com/docs/en/zos-basic-skills?topic=storage-what-is-address-space</a>.
+* <a href="https://www.techtarget.com/searchstorage/definition/address-space">https://www.techtarget.com/searchstorage/definition/address-space</a>.
+
+
 
 
 
