@@ -32,12 +32,15 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, "Fork failed");
 		return 1;
 	} else if(pid == 0) { // child process
-		puts("I am the child");
+		puts("I am the child"); /* The child process inherits privileges and scheduling attributes from the parent, as well certain
+					   resources, such as open files */
 		execlp("/usr/bin/ls", "ls", NULL);
 	} else { // parent process
 		// parent waits for the child to complete
 		puts("I am the parent");
-		wait(NULL);
+		wait(NULL); /* The parent waits (wait()) for the child process to complete. When the child process completes (by either implicitly
+			       or explicitly invoking exit() system call), the parent process resumes from the call to wait(), where it completes
+			       using the exit() system call. */
 		puts("Child Complete");
 	}
 
