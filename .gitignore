@@ -2,7 +2,6 @@
 dconfig
 *.sty
 *.tex
-*.png
 *.svg
 *.js
 *.html
