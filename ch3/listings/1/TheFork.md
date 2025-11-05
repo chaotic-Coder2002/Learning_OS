@@ -32,7 +32,7 @@ Now in the next line, another fork is created. At `pid_t pid2 = fork();`, both `
 
 The same has been picturized in the following image:
 
-<img src="images/forkSystemCall.jpg" width="60%" height="60%">
+<img src="images/forkSystemCall.jpg" width="80%" height="80%">
 
 
 
