@@ -34,6 +34,26 @@ The same has been picturized in the following image:
 
 <img src="images/forkSystemCall.jpg" width="80%" height="80%">
 
+# The `wait()` system call
+
+* Program: <a href="https://github.com/chaotic-Coder2002/Learning_OS/blob/OS/ch3/listings/1/forkwait.c">forkwait.c</a>.
+
+A process terminates when it finishes executing its final statement and asks the OS to delete it by using the `exit()` system call. At that point, the process may return a status value (usually an integer) to its parent process (via the `wait()` system call). All the resources -- including physical and virtual memory, open files, and I/O buffers -- are deallocated by the operating system.
+
+The following snippet for the parent process has been taken from the `forkwait.c` program:
+
+```c
+pid_t pid2; // this was taken for demonstrating the pid and pid2 are the same
+int status;
+pid2 = wait(&status);
+```
+Here, the parent process invokes the `wait()` system call by passing the address of an integer `status`. This system call updates this integer with the exit status of the child process and also returns the process identifier (PID) of the terminated child process so that parent can tell which of its children has terminated.
+
+When a process terminates, its resources are deallocated by the OS. However, its entry in the process table must remain there until the parent calls `wait()` system call.
+
+* A process that has terminated but whose parent hasn't yet called `wait()` known as a **zombie** process.
+* If a parent process terminates without invoking the `wait()` system call, then its children are called **orphans**. Linux and UNIX address this scenario by assigning the `init` process as the new parent to orphan processes. The `init` periodically invokes `wait()`, thereby allowing the exit status of any orphaned process to be collectedand releasing the orphan's process identifier and process-table entry.
+
 
 # Some helpful links
 
